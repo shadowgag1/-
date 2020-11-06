@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tmux</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles_resources.css">
+        <style>
+            h4 {
+                color:  #FF6600;
+            }
+            #desc {
+                color: #0086b3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <p>
+                    <h1 class="main-head">Tmux<span id="h-cursor">|</span></h1>
+                </p>
+                <p>
+                    <a href="index.html">home</a> . <a href="resources.html">tools and resources</a> . <a href="tmux.html">Tmux</a>
+                </p>
+            </center>
+            <div>
+                <p>
+                    <center><p><img src="Images/tmux.png" class="img-fluid" alt="terminal"></p></center><br>
+
+                    <h4>Installing Tmux on Ubuntu/Kali:</h4>
+                    <pre><code>sudo apt-get install tmux</code></pre><br>
+
+                    <h4>Installing Tmux on Arch:</h4>
+                    <pre><code>sudo pacman -S tmux</code></pre><br>
+
+                    <h4>Starting New Tmux Sessions:</h4>
+                    <pre><code>tmux</code></pre>
+                    <pre><code>tmux new -s &lt;session-name&gt;</code></pre><br>
+
+                    <h4>Key bindings for Tmux Sessions:</h4>
+                    <code>tmux ls</code><span id="desc"> - List all tmux sessions.</span><br>
+                    <code>ctrl b shift $</code><span id="desc"> - Change the current tmux session name.</span><br>
+                    <code>ctrl b d</code><span id="desc"> - Dettach a tmux session.</span><br>
+                    <code>tmux -a -t &lt;session-name&gt;</code><span id="desc"> - Reattach a tmux session.</span><br>
+                    <code>ctrl b s</code><span id="desc"> - Switch between 2 or more tmux sessions.</span><br>
+                    <code>ctrl b shift :</code><span id="desc"> - Get into tmux prompt.</span><br>
+                    <code>tmux kill-session -t &lt;session-name&gt;</code><span id="desc"> - Kill a tmux session.</span><br>
+                    <code>tmux kill-session -t &lt;session-name-in-use&gt; -a</code><span id="desc"> - Kill all tmux sessions except the one currently in use.</span><br>
+                    <code>exit</code><span id="desc"> - Exit currently selected tmux session.</span><br><br>
+
+                    <h4>Key bindings for Tmux Panes:</h4>
+                    <code>ctrl b shift "</code><span id="desc"> - Split pane horizontally.</span><br>
+                    <code>ctrl b shift %</code><span id="desc"> - Split pane vertically.</span><br>
+                    <code>ctrl b spacebar</code><span id="desc"> - Cycle/toggle between tmux layouts.</span><br>
+                    <code>ctrl b [arrow-key]</code><span id="desc"> - Move to different panes.</span><br>
+                    <code>ctrl b ;</code><span id="desc"> - Move between 2 frequently used panes.</span><br>
+                    <code>ctrl b shift }</code><span id="desc"> - Move the currently selected pane clockwise.</span><br>
+                    <code>ctrl b shift {</code><span id="desc"> - Move the currently selected pane counter-clockwise.</span><br>
+                    <code>ctrl b q</code><span id="desc"> - Check pane number.</span><br>
+                    <code>ctrl b z</code><span id="desc"> - Enlarge a particular pane, if that pane is to small to view the results.</span><br>
+                    <code>ctrl b x</code><span id="desc"> - Kill pane.</span><br><br>
+
+                    <h4>Tmux prompt mode:</h4>
+                    <code>swap-pane -s &lt;pane-number&gt; -t &lt;pane-number&gt;</code><span id="desc"> - Swap two panes and move with the swapped pane.</span><br>
+                    <code>swap-pane -t &lt;pane-number&gt; -s &lt;pane-number&gt;</code><span id="desc"> - Swap two panes without changing the currently selected pane.</span><br>
+                    <code>join-pane -s &lt;window-name&gt;</code><span id="desc"> - Join two panes together with the source window.</span><br>
+                    <code>join-pane -t &lt;window-name&gt;</code><span id="desc"> - Join two panes together with the destination window.</span><br>
+                    &emsp;<span id="desc">(note: adding -v or -h joins horizontally or vertically respectively for join-pane.)</span><br><br>
+
+                    <h4>Key bindings for Tmux Windows:</h4>
+                    <code>ctrl b c</code><span id="desc"> - Create a new empty tmux window.</span><br>
+                    <code>ctrl b ,</code><span id="desc"> - Change the currently selected window name.</span><br>
+                    <code>ctrl b shift !</code><span id="desc"> - Move the currently selected pane to it's own tmux window.</span><br>
+                    <code>ctrl b p</code><span id="desc"> - Move back to previous tmux window.</span><br>
+                    <code>ctrl b n</code><span id="desc"> - Move up to next tmux window.</span><br>
+                    <code>ctrl b w</code><span id="desc"> - View and cycle between all tmux windows.</span><br>
+                    <code>ctrl b shift &</code><span id="desc"> - Kill or completely close a tmux window.</span><br><br>
+
+                    <h4>Tmux copy mode:</h4>
+                    <code>ctrl b [</code><span id="desc"> - Start copy mode. (note: always start copy mode before using below key-bindings.)</span><br>
+                    <code>ctrl r</code><span id="desc"> - Search/grep up the wall of terminal text.</span><br>
+                    <code>ctrl s</code><span id="desc"> - Search/grep down the wall of terminal text.</span><br>
+                    <code>ctrl spacebar</code><span id="desc"> - Enable text highlighting to select text for copying.</span><br>
+                    <code>alt w</code><span id="desc"> - Copy the text after selecting.</span><br>
+                    <code>ctrl b ]</code><span id="desc"> - Paste from tmux clipboard to a terminal text editor.</span><br>
+                    <code>ctrl b shift #</code><span id="desc"> - Double check what is copied to the tmux clipboard.</span><br>
+                    <code>q (or) esc</code><span id="desc"> - Exit out of copy mode.</span><br>
+                </p>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
