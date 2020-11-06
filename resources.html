@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tools and Resources</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles_resources.css">
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <p>
+                    <h1 class="main-head">Some Useful Tools and Resources for CTF's<span id="h-cursor">|</span></h1>
+                </p>
+                <p>
+                    <a href="index.html">home</a> . <a href="resources.html">tools and resources</a>
+                </p>
+                <div class="alert alert-dark" role="alert">
+                    note: Most of the tools mentioned are for linux, which may or may not work on windows!!
+                </div>
+            </center>
+            <p><br>
+                <dl class="row">
+                    <dt class="col-sm-3">Cryptography</dt>
+                    <dd class="col-sm-9">
+                        <p>Online tools to crack hashes, encoding/decoding, etc..</p>   
+                        <p>
+                            <ol>
+                                <li>Good site to crack hashes: <a href="https://crackstation.net" target="_blank">Crackstation</a></li>
+                                <li>Best site to do all hard work: <a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a></li>
+                                <li>Good site for ciphers: <a href="https://www.dcode.fr/tools-list#cryptography" target="_blank">dcode</a></li>
+                                <li>Best site to break vigenere ciphers(Change the language to 'English'): <a href="https://www.guballa.de/vigenere-solver" target="_blank">Vigenere Solver</a></li>
+                                <li>Another site for substitution ciphers: <a href="https://quipqiup.com/" target="_blank">quipqiup</a></li>
+                                <li>Brainfuck interpreter: <a href="https://www.dcode.fr/brainfuck-language" target="_blank">Brainfuck Language</a></li>
+                                <li>Malbolge interpreter: <a href="http://www.malbolge.doleczek.pl/" target="_blank">Malbolge</a></li>
+                            </ol>
+                        </p>
+                    </dd>
+
+                    <dt class="col-sm-3">Steganography</dt>
+                    <dd class="col-sm-9">
+                        <p>Command line tools like:</p>
+                        <p>
+                            <ol>
+                                <li><u>Steghide</u>, tool to hide/extract messages in/from images and audio files particularly JPEG and WAV files. (Can be installed from package managers of popular distributions)</li>
+                                <li><a href="https://github.com/zed-0xff/zsteg" target="_blank">Zsteg</a>, tool to detect hidden data in PNG and BMP files.</li>
+                                <li><a href="https://github.com/ReFirmLabs/binwalk" target="_blank">Binwalk</a>, is a firmware extracting tool. Mostly used to extract hidden data from images for Steganography. (Pre-installed or install from your package manager)</li>
+                                <li><u>Strings</u>, is a command line tool (Pre-installed) used to print out all the readable strings inside a file, binary, etc.. Pretty useful most of the times.</li>
+                                <li><u>Hexeditor</u>, tool to manipulate binary data in hexadecimal form (Mostly to fix file headers). There are tons of hexeditors out there, go pick your choice.</li>
+                            </ol>
+                        </p>
+                    </dd>
+                
+                    <dt class="col-sm-3">Reverse Shells</dt>
+                    <dd class="col-sm-9">
+                        <p>List of usefull reverse shells.</p>
+                        <p>
+                            <ol>
+                                <li><a href="reverseshells.html" target="_blank">Reverse Shell Cheatsheet</a>. (For some reason pentestmonkey cheetsheet is blocked in firefox. So here is a copy of reverse shells from pentest monkey.)</li>
+                                <li><a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php" target="_blank">PHP-Reverse-Shell</a>. Extremly usefull when you have an option to upload a file.</li>
+                            </ol>
+                        </p>
+                    </dd>
+
+                    <dt class="col-sm-3">Usefull Cheatsheets</dt>
+                    <dd class="col-sm-9">
+                        <p>List of usefull cheatsheets for some tools.</p>
+                        <p>
+                            <ol>
+                                <li><a href="tmux.html" target="_blank">Tmux</a>, it is a terminal multiplexer for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window.</li>
+                            </ol>
+                        </p>
+                    </dd>
+                </dl>
+            </p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
